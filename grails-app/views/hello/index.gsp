@@ -6,7 +6,7 @@
     <title>Render Domain</title>
 </head>
 <body>
-	<g:each in="${personList}" var = "person">
+	<g:each in="${people}" var = "person">
 		<tr>
 		
 			<td>${person.lastName}, ${person.firstName} - ${person.age}</br></td>

@@ -5,7 +5,7 @@
 		<title>Welcome to Grails</title>
 	</head>
 	<body>
-		<g:form action="save">
+		<g:form action="save" controller="person">
 			<label for="lastName">Last Name</label>
 			<g:textField name="lastName" value="${personSample.lastName}"/>
 			</br>
