@@ -1,6 +1,10 @@
 package sample
 
 class PersonController {
+	
+	static scaffold = true
+	
+	
 	def form(){
 
 	}
