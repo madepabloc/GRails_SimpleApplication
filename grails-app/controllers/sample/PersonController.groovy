@@ -8,7 +8,8 @@ class PersonController {
 	def save(){
 		def person = new Person(params)
 		person.save()
-		render (view : 'index.gsp')
+//		render (view : 'index.gsp')
+		redirect (controller : "hello", action : "index" )
 		
 	}	
 	
