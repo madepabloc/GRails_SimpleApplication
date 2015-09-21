@@ -13,7 +13,8 @@
 			<g:textField name="firstName" value="${personSample.firstName}"/>
 			</br>
 			<label for="age">Age</label>
-			<g:textField name="age" value="${personSample.age}"/>
+			<g:field name="age" type="number"  value="${personSample.age}"/>
+			
 			</br>
 			<g:submitButton name="create" value="Save" />
 			
