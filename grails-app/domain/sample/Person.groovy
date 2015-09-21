@@ -6,12 +6,12 @@ class Person {
 	String firstName
 	String lastName
 	int age
+	Date dateOfBirth
 	
 	static constraints = {
 		firstName (blank : false)
 		lastName (blank : false)
 		age (blank : false)
-		
 		
 	}
 }
