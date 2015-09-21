@@ -7,11 +7,13 @@ class Person {
 	String lastName
 	int age
 	Date dateOfBirth
+	double totalAmount
 	
 	static constraints = {
 		firstName (blank : false)
 		lastName (blank : false)
 		age (blank : false)
+		totalAmount (blank : false)
 		
 	}
 }
