@@ -10,7 +10,11 @@ class PersonService {
 		p.dateOfBirth = new Date()
 		p.totalAmount = totalAmount
 //		p.dateOfBirth = dateOfBirth
-		p.save()
+		if (!p.save(flush: true)){
+			return null
+			
+		}
+		
 		
 		return p
 

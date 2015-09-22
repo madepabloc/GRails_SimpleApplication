@@ -18,19 +18,21 @@ class PersonController {
     def create() {
         [personInstance: new Person(params)]
     }
-
-    def save() {
+	
+	
+	def save() {
 		
 		//call to personService to persist in bd
-        def personInstance = new Person(params)
-        if (!personInstance.save(flush: true)) {
-            render(view: "create", model: [personInstance: personInstance])
-            return
-        }
-
-        flash.message = message(code: 'default.created.message', args: [message(code: 'person.label', default: 'Person'), personInstance.id])
-        redirect(action: "show", id: personInstance.id)
-    }
+		
+        def personInstance = personService.createPerson(params.firstName, params.lastName, Integer.parseInt(params.age), Double.parseDouble(params.totalAmount))
+		if (personInstance==null) {
+			render(view: "create", model: [personInstance: personInstance])
+			return
+		}
+		
+		flash.message = message(code: 'default.created.message', args: [message(code: 'person.label', default: 'Cliente'), "${personInstance.firstName} ${personInstance.lastName}"])
+		redirect(action: "show", id: personInstance.id)
+	}
 
     def show(Long id) {
         def personInstance = Person.get(id)
